@@ -142,6 +142,22 @@ body {
   color: var(--ld-primary);
   white-space: nowrap;
 }
+.deadline-card {
+  background: var(--ld-bg-soft);
+  border: 1px solid #e7ecf3;
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+}
+.deadline-card .title { color: var(--ld-primary); }
+.deadline-card .deadline-note {
+  color: var(--ld-muted);
+  font-size: .85rem;
+  margin-bottom: .5rem;
+}
+.deadline-card .table { background: transparent; }
+.deadline-card .table td { padding: .7rem .35rem; }
+.deadline-card .table tr:first-child td { border-top: none; }
+.deadline-card .table td:last-child { text-align: right; }
 .cfp-topics li { margin-bottom: .35rem; }
 
 /* ---------- Schedule ---------- */
@@ -182,3 +198,10 @@ body {
   font-weight: 600;
 }
 .button.is-ld-outline:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 768px) {
+  .ld-hero { padding: 5.5rem 1.5rem 4.5rem; }
+  .ld-hero .title { font-size: 2.25rem; line-height: 1.08; }
+  .ld-hero .subtitle { font-size: 1.25rem; }
+}
