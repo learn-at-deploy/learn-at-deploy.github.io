@@ -4,23 +4,24 @@
    =========================================================== */
 
 :root {
-  --ld-primary: #1b2a6b;      /* deep indigo */
-  --ld-accent:  #15b8a6;      /* teal */
-  --ld-accent-dark: #0e8c7e;
-  --ld-ink:     #1f2733;
-  --ld-muted:   #5a6472;
-  --ld-bg-soft: #f6f8fb;
+  --ld-primary: #183b46;      /* deep indigo */
+  --ld-accent:  #167568;      /* teal */
+  --ld-accent-dark: #10594f;
+  --ld-ink:     #263b40;
+  --ld-muted:   #596b6d;
+  --ld-bg-soft: #edf3f0;
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
 
 body {
+  background: #fcfbf7;
   color: var(--ld-ink);
   font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- Navbar ---------- */
-.navbar.is-fixed-top { box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+.navbar.is-fixed-top.is-white { background: #fcfbf7; box-shadow: 0 1px 0 #d9e4de; }
 .navbar-brand .brand-tag {
   font-weight: 800;
   color: var(--ld-primary);
@@ -32,17 +33,14 @@ body {
 /* ---------- Hero ---------- */
 .ld-hero {
   background:
-    /* dark overlay so white text stays readable over the photo */
-    linear-gradient(160deg, rgba(15,26,68,.82) 0%, rgba(27,42,107,.74) 55%, rgba(36,58,143,.70) 100%),
-    /* banner photo (drop a file at static/images/banner.jpg) */
-    url('../images/banner.jpg') center 30% / cover no-repeat,
-    /* fallback gradient if no banner image is present */
-    linear-gradient(160deg, #0f1a44 0%, #1b2a6b 55%, #243a8f 100%);
+    radial-gradient(ellipse at 85% 10%, rgba(94, 172, 145, .28), transparent 55%),
+    linear-gradient(135deg, #102d36 0%, #183f49 55%, #24594f 100%);
   color: #fff;
   padding: 7rem 1.5rem 6rem;
 }
 .ld-hero .title,
 .ld-hero .subtitle { color: #fff; }
+.ld-hero .subtitle { color: #dbe8e3; }
 .ld-hero .title {
   font-weight: 800;
   letter-spacing: -.03em;
@@ -61,7 +59,7 @@ body {
 }
 .ld-hero .ld-venue {
   font-weight: 600;
-  color: #d7e1ff;
+  color: #dbe8e3;
 }
 .ld-hero .ld-venue .tag {
   background: rgba(255,255,255,.14);
@@ -89,11 +87,17 @@ body {
 }
 .ld-soft { background: var(--ld-bg-soft); }
 .content p { line-height: 1.7; }
+a { color: var(--ld-accent); }
+a:hover { color: var(--ld-accent-dark); }
+a:focus-visible, button:focus-visible { outline: 3px solid #b57a39; outline-offset: 4px; }
+.table { color: var(--ld-ink); }
+.table td { border-color: #d9e4de; }
+#panelists { background: #f3f0e7; }
 
 /* ---------- Challenges ---------- */
 .challenge-card {
   background: #fff;
-  border: 1px solid #e7ecf3;
+  border: 1px solid #d9e4de;
   border-radius: 14px;
   padding: 1.25rem 1.35rem;
   height: 100%;
@@ -101,7 +105,7 @@ body {
 }
 .challenge-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(27,42,107,.10);
+  box-shadow: 0 12px 30px rgba(24,59,70,.10);
 }
 .challenge-card .num {
   font-family: "SFMono-Regular", Menlo, monospace;
@@ -126,8 +130,8 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #fff;
-  box-shadow: 0 6px 18px rgba(27,42,107,.18);
-  background: #e7ecf3;
+  box-shadow: 0 6px 18px rgba(24,59,70,.14);
+  background: #d9e4de;
 }
 .person .name { font-weight: 700; margin-top: .65rem; color: var(--ld-ink); }
 .person .role { color: var(--ld-ink); font-size: .85rem; font-weight: 600; }
@@ -144,7 +148,7 @@ body {
 }
 .deadline-card {
   background: var(--ld-bg-soft);
-  border: 1px solid #e7ecf3;
+  border: 1px solid #d9e4de;
   border-radius: 14px;
   padding: 1.25rem 1.35rem;
 }
@@ -162,7 +166,7 @@ body {
 
 /* ---------- Schedule ---------- */
 .schedule-tba {
-  border: 2px dashed #c7d0de;
+  border: 2px dashed #a6bcb2;
   border-radius: 14px;
   padding: 3rem 1.5rem;
   text-align: center;
@@ -172,22 +176,22 @@ body {
 .schedule-table { background: transparent; }
 .schedule-table td { vertical-align: middle; padding: .85rem 1rem; }
 .schedule-table .when { width: 9.5rem; }
-.schedule-table tr.is-break td { background: var(--ld-bg-soft); font-style: italic; color: var(--ld-muted); }
+.schedule-table tr.is-break td { background: #e0ece5; font-style: italic; color: var(--ld-muted); }
 .schedule-table tr.is-break td.when { color: var(--ld-muted); }
-.schedule-table tr.is-end td { font-weight: 700; color: var(--ld-primary); border-top: 2px solid #e7ecf3; }
+.schedule-table tr.is-end td { font-weight: 700; color: var(--ld-primary); border-top: 2px solid #d9e4de; }
 
 /* ---------- Footer ---------- */
 .footer.ld-footer {
-  background: #0f1a44;
-  color: #cdd6ee;
+  background: #102d36;
+  color: #dbe8e3;
 }
-.footer.ld-footer a { color: #9fd9d1; }
+.footer.ld-footer a { color: #a8ded0; }
 
 /* ---------- Buttons ---------- */
 .button.is-ld {
   background: var(--ld-accent);
   border-color: transparent;
-  color: #04201c;
+  color: #fff;
   font-weight: 600;
 }
 .button.is-ld:hover { background: var(--ld-accent-dark); color: #fff; }
@@ -205,3 +209,16 @@ body {
   .ld-hero .title { font-size: 2.25rem; line-height: 1.08; }
   .ld-hero .subtitle { font-size: 1.25rem; }
 }
+
+/* ---------- Speaker and panelist profiles ---------- */
+.profile-list { display: grid; gap: 1.5rem; }
+.profile-row { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 2rem; align-items: start; padding: 2rem; border: 1px solid #d9e4de; border-radius: 16px; background: #fcfbf7; }
+.profile-row .person { margin-bottom: 0; }
+.profile-row .name { font-size: 1.1rem; }
+.profile-bio { margin: 0; }
+.profile-bio p { line-height: 1.75; }
+@media screen and (max-width: 768px) {
+  .profile-row { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.5rem; }
+}
+
+.profile-order-note { color: var(--ld-muted); font-size: .9rem; }
